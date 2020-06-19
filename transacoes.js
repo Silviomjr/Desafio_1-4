@@ -41,7 +41,9 @@ function getAverageTransactionValue() {
     for(let transaction of user.transactions) {
         sum = sum + transaction.value
     }
-    return sum / user.transactions.length
+    let average = sum / user.transactions.length;
+    average = average.toFixed(2) 
+    return average
 }
 
 function getTransactionsCount() {
@@ -63,7 +65,7 @@ createTransaction({ type: "credit", value: 120 });
 createTransaction({ type: "debit", value: 80 });
 createTransaction({ type: "debit", value: 30 });
 
-console.log(user.balance);
+
 
 getHigherTransactionByType("credit");
 getHigherTransactionByType("debit"); 
